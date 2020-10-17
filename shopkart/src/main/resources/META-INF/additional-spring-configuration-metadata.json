@@ -11,8 +11,13 @@
       "description": "The article topic."
     },
     {
-      "name": "kafka.producer.client.id",
+      "name": "kafka.consumer.client.id",
       "type": "java.lang.String",
-      "description": "Kafka producer client ID."
+      "description": "Kafka consumer client ID."
+    },
+    {
+      "name": "kafka.consumer.group.id",
+      "type": "java.lang.String",
+      "description": "Kafka consumer group ID."
     }
   ] }
