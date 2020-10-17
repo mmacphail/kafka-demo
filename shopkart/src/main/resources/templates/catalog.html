@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ShopKart</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Welcome to ShopKart</h1>
+
+<td th:switch="${#lists.size(articles)}">
+    <span th:case="'0'">No articles yet!</span>
+    <div th:case="*">
+        <div th:each="article:${articles}" th:text="${article.label} + ' (color: ' + ${article.color} + ') - ' + ${article.quantity} + ' left in inventoy'"/>
+    </div>
+</td>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Katalog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Welcome to Katalog</h1>
+    <div th:if="${error}">
+        <h2>An error happened when adding your article, please retry.</h2>
+    </div>
+    <div th:unless="${error}">
+        <h2>Your article was added to Katalog!</h2>
+
+        <p th:text="'label: ' + ${article.label}" />
+        <p th:text="'color: ' + ${article.color}" />
+        <p th:text="'quantity: ' + ${article.quantity}" />
+    </div>
+</body>
+</html>

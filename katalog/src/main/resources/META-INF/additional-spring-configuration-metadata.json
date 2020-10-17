@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "kafka.url",
+      "type": "java.lang.String",
+      "description": "URLs of the kafka cluster. Define 2 to be sure."
+  }
+] }
