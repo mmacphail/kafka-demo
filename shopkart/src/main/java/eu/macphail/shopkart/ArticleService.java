@@ -1,5 +1,6 @@
 package eu.macphail.shopkart;
 
+import eu.macphail.shopkart.model.Article;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,14 @@ public class ArticleService {
     private ArticleRepository repository;
 
     @Transactional
-    public void addNewArticle(Article article) {
-        article.setId(null);
-        article = repository.save(article);
+    public void addNewArticle(eu.macphail.data.Article article) {
+        Article art = new Article();
+        art.setLabel(article.getLabel());
+        art.setColor(article.getColor().toString());
+        art.setQuantity(article.getQuantity());
+        art = repository.save(art);
 
-        logger.info("Assigned ID {} to article {}", article.getId(), article.getLabel());
+        logger.info("Assigned ID {} to article {}", art.getId(), art.getLabel());
     }
 
 }

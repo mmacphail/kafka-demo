@@ -1,0 +1,15 @@
+{
+    "name": "Article",
+    "type": "record",
+    "namespace": "eu.macphail.data",
+    "fields": [
+        {"name": "id", "type": "long"},
+        {"name": "label", "type": "string"},
+        {"name": "color", "type": {
+                 "type": "enum",
+                 "name": "Color",
+                 "symbols": ["BLACK", "GREEN", "WHITE", "YELLOW", "ORANGE", "BLUE", "PINK"]},
+         "doc": "The color of the article"},
+        {"name": "quantity", "type": "int"}
+    ]
+}
