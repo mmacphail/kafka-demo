@@ -58,6 +58,17 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka3:9094
     ports:
       - '9094:9094'
+  
+  schema-registry:
+    image: confluentinc/cp-schema-registry:6.0.0
+    container_name: schema-registry
+    environment:
+      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: zk1:2181
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_LISTENERS: http://schema-registry:8081
+      SCHEMA_REGISTRY_DEBUG: 'true'
+    ports:
+      - '8084:8081'
 
   akhq:
     image: tchiotludo/akhq
